@@ -2,7 +2,7 @@
 require 'pry'
 
 class Person
-    attr_accessor :bank_account
+    attr_accessor :bank_account, :happiness, :hygiene
     attr_reader :name
 
     def initialize(name, bank_account = 25, happiness = 8, hygiene = 8)
@@ -21,10 +21,6 @@ class Person
         @happiness = happiness
     end
 
-    def happiness
-        @happiness
-    end
-
     def hygiene=(hygiene)
         if hygiene > 10
             hygiene = 10
@@ -32,10 +28,6 @@ class Person
             hygiene = 0
         end
         @hygiene = hygiene
-    end
-
-    def hygiene
-        @hygiene
     end
 
     def happy?
