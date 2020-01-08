@@ -2,7 +2,6 @@ require "pry"
 
 class Person
 attr_accessor :bank_account
-#attr_reader :name,:hygiene, :happiness 
     def initialize(name)
      @name = name
      @bank_account = 25
@@ -14,43 +13,28 @@ attr_accessor :bank_account
     end 
 
     def happiness=(happiness)
-
         @happiness = happiness
-        
-
-        #if happiness > 10
-         #   @happiness = 10
-        #elsif happiness < 0
-        #    @happiness = 0
-       # else
-            #@happiness = happiness
-        # end
     end 
+
     def happiness
         @happiness.clamp(0,10)
     end
 
-    def hygiene=(hygiene)
-        #if hygiene > 10
-        #    @hygiene = 10
-        #elsif hygiene < 0
-        #    @hygiene = 0
-        #else
-            @hygiene = hygiene 
-        # end
-         
+    def hygiene=(hygiene)   
+        @hygiene = hygiene     
     end 
+
     def hygiene 
         @hygiene.clamp(0,10)
     end 
     
-       def happy?
+    def happy?
          if happiness > 7
             true
          else 
             false 
          end
-       end 
+    end 
 
        def clean?
         if hygiene > 7
