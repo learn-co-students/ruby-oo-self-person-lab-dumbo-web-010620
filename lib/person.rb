@@ -52,18 +52,18 @@ class Person
       end
     
       def start_conversation(person, topic)
-        objects = [self, person]
-        if topic == "politics"
-          objects.each { |o| o.happiness -= 2}
-          first, second = ["partisan", "lobbyist"]
-        elsif topic == "weather"
-          objects.each { |o| o.happiness += 1}
-          first, second = ["sun", "rain"]
-        end
-        first ||= "blah"
-        second ||= "blah"
-        base_string = "blah blah #{first} blah #{second}"
+        if topic=="politics"
+          person.happiness -= 2
+          self.happiness -= 2
+          "blah blah partisan blah lobbyist"
+        elsif topic=="weather"
+          person.happiness += 1
+          self.happiness += 1
+          "blah blah sun blah rain"
+        elsif topic!="politics" || "weather"
+          "blah blah blah blah blah"
       end
+    end
     
       def get_paid(salary)
         self.bank_account += salary
